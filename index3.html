@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Rose Day My Love! 🌹</title>
+  <!-- Adding Favicon -->
+  <link rel="shortcut icon" type="image/jpg" href="heart.png" />
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      font-family: 'Dancing Script', cursive;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+
+    /* Particles */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.4);
+      animation: float 25s linear infinite;
+      bottom: -150px;
+      border-radius: 50%;
+    }
+
+    .particle:nth-child(1) {
+      left: 25%;
+      width: 80px;
+      height: 80px;
+      animation-delay: 0s;
+    }
+
+    .particle:nth-child(2) {
+      left: 10%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 2s;
+      animation-duration: 12s;
+    }
+
+    .particle:nth-child(3) {
+      left: 70%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 4s;
+    }
+
+    .particle:nth-child(4) {
+      left: 40%;
+      width: 60px;
+      height: 60px;
+      animation-delay: 0s;
+      animation-duration: 18s;
+    }
+
+    .particle:nth-child(5) {
+      left: 65%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 0s;
+    }
+
+    .particle:nth-child(6) {
+      left: 75%;
+      width: 110px;
+      height: 110px;
+      animation-delay: 3s;
+    }
+
+    .particle:nth-child(7) {
+      left: 35%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 7s;
+    }
+
+    .particle:nth-child(8) {
+      left: 50%;
+      width: 25px;
+      height: 25px;
+      animation-delay: 15s;
+      animation-duration: 45s;
+    }
+
+    .particle:nth-child(9) {
+      left: 20%;
+      width: 15px;
+      height: 15px;
+      animation-delay: 2s;
+      animation-duration: 35s;
+    }
+
+    .particle:nth-child(10) {
+      left: 85%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 0s;
+      animation-duration: 11s;
+    }
+
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+      }
+
+      100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+      }
+    }
+
+
+    /* --- Frame styles --- */
+    #frame-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 600px;
+      height: 60vh;
+      max-height: 500px;
+      background: url('photos/rose_bg.jpeg') no-repeat center center;
+      background-size: cover;
+      border: 15px solid white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      z-index: 10;
+      transition: opacity 1s ease, transform 1s ease;
+      cursor: default;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+
+    #frame-container::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+
+    #frame-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      z-index: 0;
+    }
+
+
+    /* The Rope */
+    #nazar-rope {
+      position: absolute;
+      top: 0;
+      left: 50px;
+      width: 4px;
+      height: 60px;
+      background: linear-gradient(to bottom, #444, #222);
+      z-index: 19;
+      transform-origin: top center;
+    }
+
+
+    /* The Nazar Element */
+    .nazar-amulet {
+      position: absolute;
+      top: 60px;
+      left: 27px;
+      font-size: 3rem;
+      z-index: 20;
+      filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.4));
+      cursor: grab;
+      transition: transform 0.1s ease-out;
+      animation: swingIdle 3s infinite ease-in-out alternate;
+    }
+
+    .nazar-amulet:active {
+      cursor: grabbing;
+      animation: none;
+    }
+
+
+    @keyframes swingIdle {
+      0% {
+        transform: rotate(5deg);
+      }
+
+      100% {
+        transform: rotate(-5deg);
+      }
+    }
+
+
+    /* Instructions */
+    .instruction-hint {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+      animation: pulseHint 2s infinite;
+      text-align: center;
+      width: 100%;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+
+    @keyframes pulseHint {
+      0% {
+        opacity: 0.8;
+        transform: translateX(-50%) scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.05);
+      }
+
+      100% {
+        opacity: 0.8;
+        transform: translateX(-50%) scale(1);
+      }
+    }
+
+
+    .frame-fade-out {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.9);
+      pointer-events: none;
+    }
+
+
+    /* --- Proposal Section --- */
+    #proposal-section {
+      opacity: 0;
+      transition: opacity 2s ease 1s;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    #proposal-section.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* Rose Petal Rain Container */
+    #petal-rain-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Pile Container for Accumulating Petals */
+    #petal-pile-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 15vh;
+      /* Height for pile */
+      z-index: -1;
+      pointer-events: none;
+    }
+
+
+    /* Realistic CSS Rose Petal */
+    .petal-shape {
+      position: absolute;
+      background: radial-gradient(circle at 30% 30%, #ff5e62, #990000);
+      border-radius: 50% 0 50% 50%;
+      /* Make it look like a curved petal */
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      /* Initial transform handled by JS */
+    }
+
+    .falling-petal {
+      top: -10%;
+      opacity: 0.9;
+      animation: fall linear forwards;
+    }
+
+    /* Class for piled petals (no animation, fixed pos) */
+    .piled-petal {
+      bottom: 0;
+      opacity: 1;
+      transition: opacity 1s;
+    }
+
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg) translateX(0);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(105vh) rotate(360deg) translateX(20px);
+        opacity: 1;
+      }
+
+      /* Fall past bottom */
+    }
+
+
+    h1 {
+      color: white;
+      font-size: 40px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 60px;
+      }
+    }
+
+
+    .btn {
+      color: #d6336c;
+      background-color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      margin: 10px;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, background-color 0.2s;
+      position: relative;
+      z-index: 10;
+    }
+
+    .btn:hover {
+      background-color: #ffeff5;
+      transform: scale(1.05);
+      color: #ff004d;
+    }
+
+
+    #showMessage {
+      display: none;
+    }
+
+    .ml6 {
+      position: relative;
+      display: inline-block;
+    }
+
+    .ml6 .text-wrapper {
+      position: relative;
+      display: inline-block;
+      padding-top: 0.2em;
+      padding-right: 0.05em;
+      padding-bottom: 0.1em;
+      overflow: hidden;
+    }
+
+    .ml6 .letter {
+      display: inline-block;
+      line-height: 1em;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+
+  <div id="frame-container">
+    <div id="nazar-rope"></div>
+    <div class="nazar-amulet" id="nazar-element">🧿</div>
+    <div class="instruction-hint" id="hint-text">
+      Pull to remove Nazar & Reveal My Heart... 🧿❤️
+    </div>
+  </div>
+
+
+  <div id="proposal-section" class="position-absolute top-50 start-50 translate-middle">
+
+    <div id="petal-rain-container"></div>
+    <div id="petal-pile-container"></div> <!-- Pile Container -->
+
+    <div id="parentElement">
+
+      <div class="d-flex justify-content-center">
+        <lottie-player src="https://assets10.lottiefiles.com/private_files/lf30_mywfoph1.json" background="transparent"
+          speed="1" style="width: 250px; height: 250px;" loop autoplay></lottie-player>
+      </div>
+      <h1>Every petal tells a story of my love...<br>Happy Rose Day! 🌹</h1>
+      <div class="d-flex justify-content-center">
+        <button onclick="propose()" class="btn">Forever Yours 💖</button> <br>
+        <button onclick="propose()" class="btn">My Heart is Yours 💑</button>
+      </div>
+    </div>
+
+
+    <div class="position-absolute top-50 start-50 translate-middle" id="showMessage">
+      <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_utsfwa3k.json" background="transparent"
+        speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+      <h1 class="ml6">
+        <span class="text-wrapper">
+          <span class="letters">I LOVE YOU INFINITELY! ❤️</span>
+        </span>
+      </h1>
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+
+  <script>
+    // --- Drag Logic for Nazar ---
+    const nazar = document.getElementById('nazar-element');
+    const rope = document.getElementById('nazar-rope');
+    const frame = document.getElementById('frame-container');
+    const hint = document.getElementById('hint-text');
+    const proposalSection = document.getElementById('proposal-section');
+
+
+    let isDragging = false;
+    let startY = 0;
+    let currentY = 0;
+    const maxPull = 150;
+    const initialRopeHeight = 60;
+
+
+    // Mouse Events
+    nazar.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', endDrag);
+
+
+    // Touch Events
+    nazar.addEventListener('touchstart', (e) => startDrag(e.touches[0]));
+    document.addEventListener('touchmove', (e) => drag(e.touches[0]));
+    document.addEventListener('touchend', endDrag);
+
+
+    function startDrag(e) {
+      isDragging = true;
+      startY = e.clientY;
+      nazar.style.transition = 'none';
+      rope.style.transition = 'none';
+    }
+
+
+    function drag(e) {
+      if (!isDragging) return;
+
+
+      let dy = e.clientY - startY;
+      if (dy < 0) dy = 0;
+      if (dy > maxPull + 50) dy = maxPull + 50;
+
+
+      currentY = dy;
+
+      nazar.style.top = (initialRopeHeight + dy) + 'px';
+      rope.style.height = (initialRopeHeight + dy) + 'px';
+
+      if (dy > maxPull) {
+        hint.innerText = "Release to Open!";
+        hint.style.color = "#ff4d4d";
+        hint.style.textShadow = "0 0 10px #ff4d4d";
+      } else {
+        hint.innerText = "Pull down to remove evil eye...";
+        hint.style.color = "white";
+        hint.style.textShadow = "0 2px 4px rgba(0,0,0,0.8)";
+      }
+    }
+
+
+    function endDrag() {
+      if (!isDragging) return;
+      isDragging = false;
+
+
+      if (currentY >= maxPull) {
+        nazar.style.transition = 'top 0.5s ease-in, opacity 0.5s ease-in';
+        rope.style.transition = 'height 0.5s ease-in, opacity 0.5s ease-in';
+
+        nazar.style.top = '150%';
+        rope.style.height = '150vh';
+        nazar.style.opacity = '0';
+        rope.style.opacity = '0';
+
+
+        setTimeout(() => {
+          frame.classList.add('frame-fade-out');
+          setTimeout(() => {
+            frame.style.display = 'none';
+            proposalSection.classList.add('visible');
+            startPetalRain(); // START RAIN
+          }, 800);
+        }, 500);
+
+
+      } else {
+        nazar.style.transition = 'top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        rope.style.transition = 'height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        nazar.style.top = initialRopeHeight + 'px';
+        rope.style.height = initialRopeHeight + 'px';
+        hint.innerText = "Pull down to remove evil eye...";
+        hint.style.color = "white";
+      }
+    }
+
+
+    // --- Petal Rain Logic with CSS Shapes ---
+    function startPetalRain() {
+      const container = document.getElementById('petal-rain-container');
+      const pileContainer = document.getElementById('petal-pile-container');
+
+      setInterval(() => {
+        const petal = document.createElement('div');
+        petal.classList.add('petal-shape'); // CSS shape
+        petal.classList.add('falling-petal');
+
+        // Random properties
+        const leftStart = Math.random() * 100;
+        const duration = Math.random() * 3 + 4; // 4-7s fall
+        const size = Math.random() * 20 + 15; // 15-35px size
+
+        petal.style.left = leftStart + '%';
+        petal.style.width = size + 'px';
+        petal.style.height = size + 'px'; // Making square logic for border-radius
+        petal.style.animationDuration = duration + 's';
+        // Add initial random rotation
+        petal.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+        container.appendChild(petal);
+
+        // When animation ends (simulated by timeout), add to pile
+        setTimeout(() => {
+          petal.remove(); // Remove falling one
+          addToPile(size, leftStart, pileContainer);
+        }, (duration * 1000) - 100); // slightly before end
+
+      }, 100); // Faster rain (100ms)
+    }
+
+    function addToPile(size, leftPercent, container) {
+      // Limit pile size
+      if (container.children.length > 200) {
+        container.removeChild(container.firstChild); // Remove oldest
+      }
+
+      const piledPetal = document.createElement('div');
+      piledPetal.classList.add('petal-shape');
+      piledPetal.classList.add('piled-petal');
+
+      piledPetal.style.width = size + 'px';
+      piledPetal.style.height = size + 'px';
+      // Randomize position slightly around landing spot
+      const jitter = (Math.random() - 0.5) * 5;
+      piledPetal.style.left = (leftPercent + jitter) + '%';
+      // Stack up a bit randomly for 3D effect
+      piledPetal.style.bottom = (Math.random() * 20) + 'px';
+      piledPetal.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+      container.appendChild(piledPetal);
+    }
+
+
+    // --- Proposal Logic ---
+    const parentElement = document.getElementById("parentElement");
+    const showMessage = document.getElementById("showMessage");
+
+    const propose = () => {
+      parentElement.style.display = "none";
+      showMessage.style.display = "block";
+      animateText();
+    }
+
+
+    function animateText() {
+      var textWrapper = document.querySelector(".ml6 .letters");
+      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+
+      anime.timeline({ loop: true })
+        .add({
+          targets: ".ml6 .letter",
+          translateY: ["1.1em", 0],
+          translateZ: 0,
+          duration: 750,
+          delay: (el, i) => 50 * i
+        }).add({
+          targets: ".ml6",
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 1000
+        });
+    }
+  </script>
+</body>
+
+</html>

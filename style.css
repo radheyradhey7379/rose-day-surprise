@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat");
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Caveat', serif;
+  overflow: hidden;
+  background-image: url('D:/Trainning/TRIPATHI/New Crush-20241210T050355Z-001/New Crush/images/happy-valentines-day-banner-design-vector-31748344.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.Container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Picture,
+.Picture-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 5px solid #fff;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.Picture-img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+}
+
+.Picture-img-video {
+  display: block;
+  width: 300px;
+  height: 480px;
+  pointer-events: none;
+}
+
+.Picture-note,
+.Picture-note-video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 70px;
+  padding: 12px 24px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.Network,
+.Network-video {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.Network img,
+.Network-video img {
+  width: 1.5rem;
+  aspect-ratio: 1 / 1;
+  vertical-align: middle;
+}
+
+/* Moved from inline styles */
+.page-title {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+#background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.video-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* --------------------- */
+/* Other styles          */
+/* --------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+/* General styles for mobile screens */
+/* General styles for mobile screens */
+@media (max-width: 768px) {
+  .Container {
+    /* Keep absolute positioning for the stack effect */
+    transform: translate(-50%, -50%) scale(0.8);
+    /* Scale down for mobile */
+    width: 90%;
+  }
+
+  /* Adjust video card size if needed, but keep position absolute */
+  .Picture-video video {
+    max-width: 100%;
+    height: auto;
+  }
+}
